@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Courses - Queenstown University</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Navigation and general styles assumed in style.css */
+    
+    /* Specific styles for courses page */
+
+    .course-button {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      margin: 15px auto 5px;
+      background-color: #005fa3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.3s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .course-button:hover {
+      background-color: #00457a;
+    }
+    .course-info {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      padding: 0 12px;
+      background-color: #e7f1fc;
+      border-left: 4px solid #005fa3;
+      font-size: 15px;
+      line-height: 1.5;
+      box-shadow: inset 3px 0 6px #00457a44;
+      border-radius: 0 6px 6px 0;
+    }
+    .course-info.open {
+      padding: 12px;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-family: 'Georgia', serif;
+      margin-top: 30px;
+      color: #003366;
+    }
+
+    main.content {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="University Logo" class="logo" style="height:50px; vertical-align: middle; margin-right:10px;">
+    <h1 style="display:inline-block; color:#FFFFFF; font-family: 'Georgia', serif;">Queenstown University</h1>
+    <nav style="margin-top:10px;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h2>Courses Offered</h2>
+
+    <section>
+      <h3>Undergraduate Programs</h3>
+
+      <button class="course-button" onclick="toggleInfo('bba')">Bachelor of Business Administration (BBA)</button>
+      <div class="course-info" id="bba">
+        This program prepares students to become future business leaders with a strong foundation in marketing, finance, human resources, and entrepreneurship. Real-world case studies, internships with NZ businesses, and startup simulations make this course highly practical and industry-relevant.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('cs')">Bachelor of Computer Science</button>
+      <div class="course-info" id="cs">
+        Covering Python, Java, data structures, AI, machine learning, and web development, this course trains students to be expert coders and system architects. Students also collaborate on tech projects that solve real community problems using smart software.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('tourism')">Bachelor of Tourism and Hospitality Management</button>
+      <div class="course-info" id="tourism">
+        Queenstown is a global hub of tourism, and this program blends classroom learning with practical work at world-class hotels, resorts, and event companies. Learn customer service, event planning, travel marketing, and business management.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('envsci')">Bachelor of Environmental Science</button>
+      <div class="course-info" id="envsci">
+        Explore the impact of climate change, conservation biology, and sustainability in New Zealand's diverse ecosystems. The course includes field trips to glaciers, forests, and coasts — making your education hands-on and impactful.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('media')">Bachelor of Creative Media</button>
+      <div class="course-info" id="media">
+        Learn graphic design, video editing, photography, branding, and storytelling. Work on real media campaigns, build your portfolio, and express your creativity through tech tools and visual arts.
+      </div>
+    </section>
+
+    <section>
+      <h3>Postgraduate Programs</h3>
+
+      <button class="course-button" onclick="toggleInfo('mbi')">Master of Business and Innovation</button>
+      <div class="course-info" id="mbi">
+        Dive deep into entrepreneurship, innovation leadership, and global business strategy. Ideal for those looking to start their own ventures or lead creative transformation in top companies.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('mit')">Master of Information Technology</button>
+      <div class="course-info" id="mit">
+        Gain in-depth knowledge in cloud computing, systems security, software architecture, and ethical hacking. The course focuses on both theoretical and practical IT skills.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('sustain')">Master of Sustainable Development</button>
+      <div class="course-info" id="sustain">
+        Become a global leader in sustainability. Learn environmental economics, policy, climate action, and sustainable design through real projects and global case studies.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('ds')">Master of Data Science</button>
+      <div class="course-info" id="ds">
+        Master the use of big data, AI, and machine learning to analyze and interpret complex data. Students gain experience through projects using tools like Python, R, and Tableau.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('mba')">MBA in International Business</button>
+      <div class="course-info" id="mba">
+        A business degree with a global twist. Study finance, logistics, trade law, and global economics while engaging in international case competitions and overseas business tours.
+      </div>
+    </section>
+
+    <section>
+      <h3>Online Courses</h3>
+
+      <button class="course-button" onclick="toggleInfo('dm')">Certificate in Digital Marketing</button>
+      <div class="course-info" id="dm">
+        This short-term course covers SEO, content strategy, email marketing, and influencer branding. Ideal for small business owners and creative professionals.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('lead')">Diploma in Leadership and Management</button>
+      <div class="course-info" id="lead">
+        Discover your leadership style while learning to manage teams, projects, and strategic goals — even from remote locations.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('ux')">Short Course in UX/UI Design</button>
+      <div class="course-info" id="ux">
+        Learn how to design beautiful, functional websites and apps. Understand user psychology and build mockups with industry tools.
+      </div>
+
+      <button class="course-button" onclick="toggleInfo('edu')">Remote Learning for Educators</button>
+      <div class="course-info" id="edu">
+        Designed for teachers, this course helps educators build interactive, engaging online classrooms using Google Classroom, Zoom, and other platforms.
+      </div>
+    </section>
+
+    <section>
+      <h3>International Programs</h3>
+      <p>
+        Step into a world of global opportunity with Queenstown University's International Exchange Programs. We offer semester-long and year-long placements at renowned partner universities in Australia, Canada, and the UK — all with transfer-friendly credits. You can also enroll in dual-degree options that give you a competitive edge across continents. Through funded research exchanges, cultural immersion experiences, and mentorship from global faculty, our programs help you not only learn — but lead — anywhere in the world. Your global future begins here.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Queenstown University, New Zealand. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let currentOpen = null;
+
+    function toggleInfo(id) {
+      if (currentOpen && currentOpen !== id) {
+        // Close previously open
+        let prev = document.getElementById(currentOpen);
+        prev.style.maxHeight = '0';
+        prev.classList.remove('open');
+      }
+
+      const section = document.getElementById(id);
+
+      if (section.style.maxHeight && section.style.maxHeight !== '0px') {
+        // Close if already open
+        section.style.maxHeight = '0';
+        section.classList.remove('open');
+        currentOpen = null;
+      } else {
+        // Open it
+        section.style.maxHeight = section.scrollHeight + 'px';
+        section.classList.add('open');
+        currentOpen = id;
+      }
+    }
+  </script>
+</body>
+</html>

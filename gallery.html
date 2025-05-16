@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery - Queenstown University</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7faff;
+      color: #003366;
+      margin: 0; padding: 0;
+    }
+    header {
+      background-color: #005fa3;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      height: 50px;
+      margin-right: 15px;
+    }
+    header h1 {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      flex-grow: 1;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: #a9d0f5;
+    }
+
+    main.content {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-family: 'Georgia', serif;
+      margin-bottom: 25px;
+      font-size: 28px;
+      border-bottom: 2px solid #005fa3;
+      padding-bottom: 8px;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+      transition: filter 0.3s ease;
+    }
+    .gallery-item:hover img {
+      filter: brightness(75%);
+    }
+    .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 8px 12px;
+      color: white;
+      background: rgba(0, 95, 163, 0.75);
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover .caption {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #003366;
+      color: white;
+      margin-top: 40px;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Queenstown University</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h2>Campus Gallery</h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/library.jpg" alt="University Library" />
+        <div class="caption">Modern Library Interior</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/sports_complex.jpg" alt="Sports Complex" />
+        <div class="caption">Sports & Fitness Complex</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/computer_lab.jpg" alt="Computer Lab" />
+        <div class="caption">Advanced Computer Labs</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/campus_aerial.jpg" alt="Campus Aerial View" />
+        <div class="caption">Aerial View of Campus</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/student_lounge.jpg" alt="Student Lounge" />
+        <div class="caption">Student Lounge & Common Area</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/cultural_festival.jpg" alt="Cultural Festival" />
+        <div class="caption">Annual Cultural Festival</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/research_lab.jpg" alt="Research Lab" />
+        <div class="caption">Research & Innovation Center</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/dining_hall.jpg" alt="Dining Hall" />
+        <div class="caption">Campus Cafeterias & Dining</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/classrooms.jpg" alt="Modern Classrooms" />
+        <div class="caption">State-of-the-Art Classrooms</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Queenstown University, New Zealand. All rights reserved.</p>
+  </footer>
+</body>
+</html>

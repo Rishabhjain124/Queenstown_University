@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f9ff;
+  color: #333;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  width: 60px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Style for main title */
+.content h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #003366;
+  border-bottom: 3px solid #0077cc;
+  padding-bottom: 10px;
+}
+
+/* Style for subtopics */
+.content h3 {
+  font-size: 24px;
+  margin-top: 30px;
+  font-family: 'Georgia', serif;
+  color: #005599;
+  border-left: 4px solid #0077cc;
+  padding-left: 10px;
+}
+
+/* Paragraph spacing */
+.content p, .content ul {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+.course-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.3s ease;
+  background-color: #e7f1fc;
+  border-left: 4px solid #005fa3;
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  padding: 0 12px;
+}
+
+.course-info.open {
+  max-height: 500px; /* adjust based on content */
+  padding: 12px;
+}
+.course-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, padding 0.3s ease;
+  padding: 0 12px;
+  background-color: #e7f1fc;
+  border-left: 4px solid #005fa3;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 auto 20px;
+}
+.course-info.show {
+  max-height: 500px; /* large enough to fit the text */
+  padding: 12px;
+}

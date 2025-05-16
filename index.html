@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Queenstown University</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f8ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    header img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    nav {
+      margin-left: auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .campus-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      margin: 20px 0;
+    }
+
+    .register-btn {
+      background-color: #0057b8;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      animation: blink 1s infinite;
+      border-radius: 8px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .form-container {
+      display: none;
+      margin-top: 20px;
+      background: #e6f0ff;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    input[type="text"], input[type="tel"] {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    .submit-btn {
+      padding: 8px 15px;
+      background: #0073e6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: -5px;
+      margin-bottom: 5px;
+    }
+
+    #thankyou {
+      color: green;
+      margin-top: 10px;
+      display: none;
+    }
+
+    #alreadyRegistered {
+      color: red;
+      margin-top: 15px;
+      display: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Logo">
+    <h1>Queenstown University</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome to Queenstown University</h2>
+    <p>Empowering minds and shaping futures with a world-class education in a vibrant and inclusive environment.</p>
+
+    <img src="campus.jpg" alt="Campus View" class="campus-img">
+
+    <button class="register-btn" onclick="showForm()">Register Now</button>
+    <p id="alreadyRegistered">You have already registered.</p>
+
+    <div class="form-container" id="registerForm">
+      <form onsubmit="handleSubmit(event)" id="registrationForm">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <div class="error" id="nameError" style="display:none;">Please enter a valid name (letters only)</div>
+
+        <input type="tel" id="contact" placeholder="Enter contact number" required>
+        <div class="error" id="contactError" style="display:none;">Contact number must be exactly 10 digits</div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <p id="thankyou">Thank you for registering. Please check your WhatsApp for more details.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Queenstown University</p>
+  </footer>
+
+  <script>
+    let registered = false;  // Flag to track registration status
+
+    function showForm() {
+      if (registered) {
+        // If already registered, show red message
+        document.getElementById('alreadyRegistered').style.display = 'block';
+      } else {
+        // Show form, hide message
+        document.getElementById('registerForm').style.display = 'block';
+        document.getElementById('alreadyRegistered').style.display = 'none';
+      }
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const nameError = document.getElementById("nameError");
+      const contactError = document.getElementById("contactError");
+      let valid = true;
+
+      // Name: only letters
+      if (!/^[A-Za-z\s]+$/.test(name)) {
+        nameError.style.display = "block";
+        valid = false;
+      } else {
+        nameError.style.display = "none";
+      }
+
+      // Contact: exactly 10 digits
+      if (!/^\d{10}$/.test(contact)) {
+        contactError.style.display = "block";
+        contactError.textContent = "Contact number must be exactly 10 digits";
+        valid = false;
+      } else {
+        contactError.style.display = "none";
+      }
+
+      // If valid
+      if (valid) {
+        registered = true;
+        document.getElementById("registrationForm").style.display = "none";
+        document.getElementById("thankyou").style.display = "block";
+        document.getElementById('alreadyRegistered').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact - Queenstown University</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7faff;
+      color: #003366;
+      margin: 0; padding: 0;
+    }
+    header {
+      background-color: #005fa3;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      height: 50px;
+      margin-right: 15px;
+    }
+    header h1 {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      flex-grow: 1;
+      font-size: 28px; /* smaller than before */
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: #a9d0f5;
+    }
+
+    main.content {
+      max-width: 600px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+    }
+    h2 {
+      font-family: 'Georgia', serif;
+      margin-bottom: 30px;
+      font-size: 26px; /* slightly smaller */
+      border-bottom: 2px solid #005fa3;
+      padding-bottom: 10px;
+      text-align: center;
+      font-weight: normal;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #003366;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 14px 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: #005fa3;
+      box-shadow: 0 0 5px rgba(0, 95, 163, 0.5);
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+    form button {
+      background-color: #005fa3;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 12px;
+      width: 100%;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #004080;
+    }
+    .error-message {
+      color: #d93025;
+      font-size: 14px;
+      margin-bottom: 15px;
+      display: none;
+    }
+    .confirmation-message {
+      margin-top: 20px;
+      padding: 16px;
+      background-color: #d4edda;
+      border: 1.5px solid #c3e6cb;
+      color: #155724;
+      border-radius: 6px;
+      font-size: 17px;
+      display: none;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .contact-info {
+      margin-top: 50px;
+      border-top: 2px solid #005fa3;
+      padding-top: 25px;
+      font-family: Arial, sans-serif;
+      color: #003366;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-info p {
+      margin: 8px 0;
+    }
+    .contact-info strong {
+      color: #005fa3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      background-color: #003366;
+      color: white;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Queenstown University</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm" action="#" method="post" novalidate>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" />
+      <div id="nameError" class="error-message">Name error here</div>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" />
+      <div id="emailError" class="error-message">Email error here</div>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+      <div id="messageError" class="error-message">Message error here</div>
+
+      <button type="submit">Send Message</button>
+
+      <div id="confirmation" class="confirmation-message">
+        Thank you! We have received your message and will be in touch soon.
+      </div>
+    </form>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> contact@queenstownuniversity.ac.nz</p>
+      <p><strong>Phone:</strong> +64 3 123 4567</p>
+      <p><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+      <p><strong>Address:</strong> 123 University Drive, Queenstown, New Zealand</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Queenstown University, New Zealand. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Clear previous errors and confirmation
+      nameError.style.display = 'none';
+      emailError.style.display = 'none';
+      messageError.style.display = 'none';
+      confirmation.style.display = 'none';
+
+      let valid = true;
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
+
+      const nameRegex = /^[A-Za-z\s]+$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!name) {
+        nameError.textContent = 'Name cannot be blank.';
+        nameError.style.display = 'block';
+        valid = false;
+      } else if (!nameRegex.test(name)) {
+        nameError.textContent = 'Name can only contain letters and spaces.';
+        nameError.style.display = 'block';
+        valid = false;
+      }
+
+      if (!email) {
+        emailError.textContent = 'Email cannot be blank.';
+        emailError.style.display = 'block';
+        valid = false;
+      } else if (!emailRegex.test(email)) {
+        emailError.textContent = 'Please enter a valid email address.';
+        emailError.style.display = 'block';
+        valid = false;
+      }
+
+      if (!message) {
+        messageError.textContent = 'Message cannot be blank.';
+        messageError.style.display = 'block';
+        valid = false;
+      }
+
+      if (valid) {
+        confirmation.style.display = 'block';
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
